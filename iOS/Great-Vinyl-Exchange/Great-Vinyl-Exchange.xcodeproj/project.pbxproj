@@ -13,9 +13,17 @@
 		9F4802AE1DE1522200333307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4802AC1DE1522200333307 /* Main.storyboard */; };
 		9F4802B01DE1522200333307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4802AF1DE1522200333307 /* Assets.xcassets */; };
 		9F4802B31DE1522200333307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4802B11DE1522200333307 /* LaunchScreen.storyboard */; };
+		9F4802BB1DE1FB5200333307 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F4802BA1DE1FB5200333307 /* GoogleService-Info.plist */; };
+		9F4802C31DE2934400333307 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C21DE2934400333307 /* FirebaseManager.swift */; };
+		9F4802C61DE29A8F00333307 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C51DE29A8F00333307 /* Record.swift */; };
+		9F4802C81DE29C9F00333307 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C71DE29C9F00333307 /* User.swift */; };
+		A5A8F839533F894FB20EA70B /* Pods_Great_Vinyl_Exchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E2A4D3DB72E9EDA6D63302 /* Pods_Great_Vinyl_Exchange.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24E2A4D3DB72E9EDA6D63302 /* Pods_Great_Vinyl_Exchange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Great_Vinyl_Exchange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37017E16F24A1131B30E7250 /* Pods-Great-Vinyl-Exchange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Great-Vinyl-Exchange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Great-Vinyl-Exchange/Pods-Great-Vinyl-Exchange.debug.xcconfig"; sourceTree = "<group>"; };
+		637F1C5A2068B13EA0C16DC0 /* Pods-Great-Vinyl-Exchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Great-Vinyl-Exchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-Great-Vinyl-Exchange/Pods-Great-Vinyl-Exchange.release.xcconfig"; sourceTree = "<group>"; };
 		9F4802A31DE1522200333307 /* Great-Vinyl-Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Great-Vinyl-Exchange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4802A61DE1522200333307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F4802A81DE1522200333307 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +32,10 @@
 		9F4802AF1DE1522200333307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F4802B21DE1522200333307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F4802B41DE1522200333307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F4802BA1DE1FB5200333307 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9F4802C21DE2934400333307 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Services/FirebaseManager.swift; sourceTree = "<group>"; };
+		9F4802C51DE29A8F00333307 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Models/Record.swift; sourceTree = "<group>"; };
+		9F4802C71DE29C9F00333307 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A8F839533F894FB20EA70B /* Pods_Great_Vinyl_Exchange.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		206F5679A32F3306DA258F28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24E2A4D3DB72E9EDA6D63302 /* Pods_Great_Vinyl_Exchange.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4AC49E0A1C68CBDE666A03B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37017E16F24A1131B30E7250 /* Pods-Great-Vinyl-Exchange.debug.xcconfig */,
+				637F1C5A2068B13EA0C16DC0 /* Pods-Great-Vinyl-Exchange.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9F48029A1DE1522200333307 = {
 			isa = PBXGroup;
 			children = (
 				9F4802A51DE1522200333307 /* Great-Vinyl-Exchange */,
 				9F4802A41DE1522200333307 /* Products */,
+				4AC49E0A1C68CBDE666A03B3 /* Pods */,
+				206F5679A32F3306DA258F28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +88,35 @@
 		9F4802A51DE1522200333307 /* Great-Vinyl-Exchange */ = {
 			isa = PBXGroup;
 			children = (
+				9F4802C41DE29A6C00333307 /* Models */,
+				9F4802BF1DE2930500333307 /* Services */,
 				9F4802A61DE1522200333307 /* AppDelegate.swift */,
 				9F4802A81DE1522200333307 /* FirstViewController.swift */,
 				9F4802AA1DE1522200333307 /* SecondViewController.swift */,
 				9F4802AC1DE1522200333307 /* Main.storyboard */,
 				9F4802AF1DE1522200333307 /* Assets.xcassets */,
 				9F4802B11DE1522200333307 /* LaunchScreen.storyboard */,
+				9F4802BA1DE1FB5200333307 /* GoogleService-Info.plist */,
 				9F4802B41DE1522200333307 /* Info.plist */,
 			);
 			path = "Great-Vinyl-Exchange";
+			sourceTree = "<group>";
+		};
+		9F4802BF1DE2930500333307 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9F4802C21DE2934400333307 /* FirebaseManager.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9F4802C41DE29A6C00333307 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9F4802C51DE29A8F00333307 /* Record.swift */,
+				9F4802C71DE29C9F00333307 /* User.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +126,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F4802B71DE1522200333307 /* Build configuration list for PBXNativeTarget "Great-Vinyl-Exchange" */;
 			buildPhases = (
+				88954F7420478C7319DEB854 /* [CP] Check Pods Manifest.lock */,
 				9F48029F1DE1522200333307 /* Sources */,
 				9F4802A01DE1522200333307 /* Frameworks */,
 				9F4802A11DE1522200333307 /* Resources */,
+				0CC1B588CB65846EDAEF7606 /* [CP] Embed Pods Frameworks */,
+				6B7B13D03FB8A84398F3F30B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F4802B31DE1522200333307 /* LaunchScreen.storyboard in Resources */,
+				9F4802BB1DE1FB5200333307 /* GoogleService-Info.plist in Resources */,
 				9F4802B01DE1522200333307 /* Assets.xcassets in Resources */,
 				9F4802AE1DE1522200333307 /* Main.storyboard in Resources */,
 			);
@@ -135,12 +191,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CC1B588CB65846EDAEF7606 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Great-Vinyl-Exchange/Pods-Great-Vinyl-Exchange-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B7B13D03FB8A84398F3F30B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Great-Vinyl-Exchange/Pods-Great-Vinyl-Exchange-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88954F7420478C7319DEB854 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9F48029F1DE1522200333307 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4802C31DE2934400333307 /* FirebaseManager.swift in Sources */,
 				9F4802AB1DE1522200333307 /* SecondViewController.swift in Sources */,
+				9F4802C81DE29C9F00333307 /* User.swift in Sources */,
+				9F4802C61DE29A8F00333307 /* Record.swift in Sources */,
 				9F4802A71DE1522200333307 /* AppDelegate.swift in Sources */,
 				9F4802A91DE1522200333307 /* FirstViewController.swift in Sources */,
 			);
@@ -261,6 +368,7 @@
 		};
 		9F4802B81DE1522200333307 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37017E16F24A1131B30E7250 /* Pods-Great-Vinyl-Exchange.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZY46M4YCWL;
@@ -274,6 +382,7 @@
 		};
 		9F4802B91DE1522200333307 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 637F1C5A2068B13EA0C16DC0 /* Pods-Great-Vinyl-Exchange.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZY46M4YCWL;
@@ -304,6 +413,7 @@
 				9F4802B91DE1522200333307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
