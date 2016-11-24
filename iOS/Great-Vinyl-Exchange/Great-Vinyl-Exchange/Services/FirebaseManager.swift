@@ -29,20 +29,30 @@ class FirebaseManager : NSObject{
     
     // TODO: Test this, could be off. Must find flow of User regristration
     func addUserToDatabase(user: User) -> Void {
-        let _ = self.usersRef.childByAutoId().setValue(user.toAnyObject())
+        let _ = self.userRef.childByAutoId().setValue(user.toAnyObject())
     }
     
     // TODO: Testing functionality
-    func getRecordsFromDataBase() -> [Record] {
+    func getRecordsFromDatabase() -> [Record] {
         var records = [Record]()
         recordRef.queryOrderedByKey().observe(.childAdded, with: {
             snapshot in
             
-            let dataDecoded:NSData = NSData(base64EncodedString: snapshot.value!["image"] as! String, options: NSData.Base64DecodingOptions(rawValue: 0))!
-            let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+            //Get Records from Data...Lookup how.
             
         })
         
-        return gems
+        return records
+    }
+    
+    func getUsersFromDatabase() -> [User] {
+        var users = [User]()
+        userRef.queryOrderedByKey().observe(.childAdded, with: {
+            snapshot in
+            
+            //Get Users from database...Look up how
+        })
+        
+        return users
     }
 }
