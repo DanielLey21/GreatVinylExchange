@@ -12,7 +12,7 @@ import UIKit
 class User: NSObject {
     
     // MARK: Properties
-    var fullname: String
+    var name: String
     var email: String
     var password: String
     var username: String
@@ -20,16 +20,19 @@ class User: NSObject {
     var dateOfBirth: String?
     var dateOfCreation: String
     
-    init?(fullname: String, email: String, password: String, username: String, profpic: UIImageView) {
+    //Incorporate Discogs Info
+    //var discogsName: String?
+    
+    init?(name: String, email: String, password: String, username: String, profpic: UIImageView) {
         
-        if(fullname.isEmpty || email.isEmpty || password.isEmpty || username.isEmpty) {
+        if(name.isEmpty || email.isEmpty || password.isEmpty || username.isEmpty) {
             return nil
         }
         
         let imageData: NSData = UIImagePNGRepresentation(profpic.image!)! as NSData
         //let base64String = imageData.base64EncodedString(options: NSData.Base64EncodingOptions.Encoding64CharacterLineLength)
         
-        self.fullname = fullname
+        self.name = name
         self.email = email
         self.password = password
         self.username = username
@@ -49,7 +52,7 @@ class User: NSObject {
         var user = [String:String]()
         if let profpic = profpic, let dateOfBirth = dateOfBirth {
             user = [
-                "fullname": fullname,
+                "name": name,
                 "email": email,
                 "password": password,
                 "username": username,
@@ -60,7 +63,7 @@ class User: NSObject {
             return user as AnyObject
         } else if let profpic = profpic {
             user = [
-                "fullname": fullname,
+                "name": name,
                 "email": email,
                 "password": password,
                 "username": username,
@@ -70,7 +73,7 @@ class User: NSObject {
             return user as AnyObject
         } else {
             user = [
-                "fullname": fullname,
+                "name": name,
                 "email": email,
                 "password": password,
                 "username": username,
