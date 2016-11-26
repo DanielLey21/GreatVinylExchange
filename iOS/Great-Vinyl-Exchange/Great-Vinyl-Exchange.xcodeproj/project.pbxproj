@@ -17,6 +17,8 @@
 		9F4802C31DE2934400333307 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C21DE2934400333307 /* FirebaseManager.swift */; };
 		9F4802C61DE29A8F00333307 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C51DE29A8F00333307 /* Record.swift */; };
 		9F4802C81DE29C9F00333307 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C71DE29C9F00333307 /* User.swift */; };
+		9F4802CA1DE9D2B900333307 /* DataPersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C91DE9D2B900333307 /* DataPersistencyManager.swift */; };
+		9F4802CC1DE9D5E700333307 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802CB1DE9D5E700333307 /* DataManager.swift */; };
 		A5A8F839533F894FB20EA70B /* Pods_Great_Vinyl_Exchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E2A4D3DB72E9EDA6D63302 /* Pods_Great_Vinyl_Exchange.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		9F4802C21DE2934400333307 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Services/FirebaseManager.swift; sourceTree = "<group>"; };
 		9F4802C51DE29A8F00333307 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Models/Record.swift; sourceTree = "<group>"; };
 		9F4802C71DE29C9F00333307 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
+		9F4802C91DE9D2B900333307 /* DataPersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataPersistencyManager.swift; path = Services/DataPersistencyManager.swift; sourceTree = "<group>"; };
+		9F4802CB1DE9D5E700333307 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = Services/DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				9F4802C21DE2934400333307 /* FirebaseManager.swift */,
+				9F4802C91DE9D2B900333307 /* DataPersistencyManager.swift */,
+				9F4802CB1DE9D5E700333307 /* DataManager.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -244,6 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F4802CA1DE9D2B900333307 /* DataPersistencyManager.swift in Sources */,
+				9F4802CC1DE9D5E700333307 /* DataManager.swift in Sources */,
 				9F4802C31DE2934400333307 /* FirebaseManager.swift in Sources */,
 				9F4802AB1DE1522200333307 /* SecondViewController.swift in Sources */,
 				9F4802C81DE29C9F00333307 /* User.swift in Sources */,
