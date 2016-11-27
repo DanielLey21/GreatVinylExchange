@@ -43,7 +43,7 @@ class Record: NSObject {
     
     
     func toAnyObject() -> AnyObject {
-        let imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
+        //let imageData: NSData = UIImagePNGRepresentation(image!)! as NSData
         
         // TODO: incorporate adding images to Firebase.
         // let base64String = imageData.base64EncodedString(options: NSData.Base64EncodingOptions.Encoding64CharacterLineLength)
