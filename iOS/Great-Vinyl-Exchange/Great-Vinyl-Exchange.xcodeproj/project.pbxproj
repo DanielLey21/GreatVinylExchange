@@ -8,18 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		9F4802A71DE1522200333307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802A61DE1522200333307 /* AppDelegate.swift */; };
-		9F4802A91DE1522200333307 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802A81DE1522200333307 /* FirstViewController.swift */; };
-		9F4802AB1DE1522200333307 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802AA1DE1522200333307 /* SecondViewController.swift */; };
 		9F4802AE1DE1522200333307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4802AC1DE1522200333307 /* Main.storyboard */; };
 		9F4802B01DE1522200333307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F4802AF1DE1522200333307 /* Assets.xcassets */; };
 		9F4802B31DE1522200333307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F4802B11DE1522200333307 /* LaunchScreen.storyboard */; };
 		9F4802BB1DE1FB5200333307 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F4802BA1DE1FB5200333307 /* GoogleService-Info.plist */; };
-		9F4802C31DE2934400333307 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C21DE2934400333307 /* FirebaseManager.swift */; };
-		9F4802C61DE29A8F00333307 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C51DE29A8F00333307 /* Record.swift */; };
+		9F4802C61DE29A8F00333307 /* Matchup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C51DE29A8F00333307 /* Matchup.swift */; };
 		9F4802C81DE29C9F00333307 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C71DE29C9F00333307 /* User.swift */; };
-		9F4802CA1DE9D2B900333307 /* DataPersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802C91DE9D2B900333307 /* DataPersistencyManager.swift */; };
-		9F4802CC1DE9D5E700333307 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4802CB1DE9D5E700333307 /* DataManager.swift */; };
-		A5A8F839533F894FB20EA70B /* Pods_Great_Vinyl_Exchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E2A4D3DB72E9EDA6D63302 /* Pods_Great_Vinyl_Exchange.framework */; };
+		9F648E9A1E481C28009384C2 /* FirebaseEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F648E991E481C28009384C2 /* FirebaseEndpoints.swift */; };
+		9F648E9C1E4837BF009384C2 /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F648E9B1E4837BF009384C2 /* FirebaseAPI.swift */; };
+		9FF16AF01E3ED689002E4BC8 /* MainAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF16AEF1E3ED689002E4BC8 /* MainAuthenticationViewController.swift */; };
+		9FF16AF41E3ED918002E4BC8 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FF16AF31E3ED918002E4BC8 /* Authentication.storyboard */; };
+		A5A8F839533F894FB20EA70B /* Pods_Great_Vinyl_Exchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24E2A4D3DB72E9EDA6D63302 /* Pods_Great_Vinyl_Exchange.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,18 +27,17 @@
 		637F1C5A2068B13EA0C16DC0 /* Pods-Great-Vinyl-Exchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Great-Vinyl-Exchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-Great-Vinyl-Exchange/Pods-Great-Vinyl-Exchange.release.xcconfig"; sourceTree = "<group>"; };
 		9F4802A31DE1522200333307 /* Great-Vinyl-Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Great-Vinyl-Exchange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4802A61DE1522200333307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9F4802A81DE1522200333307 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		9F4802AA1DE1522200333307 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9F4802AD1DE1522200333307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F4802AF1DE1522200333307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F4802B21DE1522200333307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F4802B41DE1522200333307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F4802BA1DE1FB5200333307 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9F4802C21DE2934400333307 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = Services/FirebaseManager.swift; sourceTree = "<group>"; };
-		9F4802C51DE29A8F00333307 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Models/Record.swift; sourceTree = "<group>"; };
+		9F4802C51DE29A8F00333307 /* Matchup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matchup.swift; path = Models/Matchup.swift; sourceTree = "<group>"; };
 		9F4802C71DE29C9F00333307 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Models/User.swift; sourceTree = "<group>"; };
-		9F4802C91DE9D2B900333307 /* DataPersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataPersistencyManager.swift; path = Services/DataPersistencyManager.swift; sourceTree = "<group>"; };
-		9F4802CB1DE9D5E700333307 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = Services/DataManager.swift; sourceTree = "<group>"; };
+		9F648E991E481C28009384C2 /* FirebaseEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseEndpoints.swift; sourceTree = "<group>"; };
+		9F648E9B1E4837BF009384C2 /* FirebaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseAPI.swift; path = ServiceLayer/FirebaseAPI.swift; sourceTree = "<group>"; };
+		9FF16AEF1E3ED689002E4BC8 /* MainAuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainAuthenticationViewController.swift; path = ViewControllers/Authentication/MainAuthenticationViewController.swift; sourceTree = "<group>"; };
+		9FF16AF31E3ED918002E4BC8 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Authentication.storyboard; path = UI/Authentication/Authentication.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,11 +90,11 @@
 		9F4802A51DE1522200333307 /* Great-Vinyl-Exchange */ = {
 			isa = PBXGroup;
 			children = (
+				9FF16AF11E3ED8A4002E4BC8 /* UI */,
+				9FF16AED1E3ED5C1002E4BC8 /* ViewControllers */,
 				9F4802C41DE29A6C00333307 /* Models */,
-				9F4802BF1DE2930500333307 /* Services */,
+				9F4802BF1DE2930500333307 /* ServiceLayer */,
 				9F4802A61DE1522200333307 /* AppDelegate.swift */,
-				9F4802A81DE1522200333307 /* FirstViewController.swift */,
-				9F4802AA1DE1522200333307 /* SecondViewController.swift */,
 				9F4802AC1DE1522200333307 /* Main.storyboard */,
 				9F4802AF1DE1522200333307 /* Assets.xcassets */,
 				9F4802B11DE1522200333307 /* LaunchScreen.storyboard */,
@@ -106,23 +104,54 @@
 			path = "Great-Vinyl-Exchange";
 			sourceTree = "<group>";
 		};
-		9F4802BF1DE2930500333307 /* Services */ = {
+		9F4802BF1DE2930500333307 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
-				9F4802C21DE2934400333307 /* FirebaseManager.swift */,
-				9F4802C91DE9D2B900333307 /* DataPersistencyManager.swift */,
-				9F4802CB1DE9D5E700333307 /* DataManager.swift */,
+				9F648E991E481C28009384C2 /* FirebaseEndpoints.swift */,
+				9F648E9B1E4837BF009384C2 /* FirebaseAPI.swift */,
 			);
-			name = Services;
+			name = ServiceLayer;
 			sourceTree = "<group>";
 		};
 		9F4802C41DE29A6C00333307 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9F4802C51DE29A8F00333307 /* Record.swift */,
+				9F4802C51DE29A8F00333307 /* Matchup.swift */,
 				9F4802C71DE29C9F00333307 /* User.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		9FF16AED1E3ED5C1002E4BC8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FF16AEE1E3ED5CE002E4BC8 /* Authentication */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9FF16AEE1E3ED5CE002E4BC8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9FF16AEF1E3ED689002E4BC8 /* MainAuthenticationViewController.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		9FF16AF11E3ED8A4002E4BC8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9FF16AF21E3ED8DC002E4BC8 /* Authentication */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		9FF16AF21E3ED8DC002E4BC8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9FF16AF31E3ED918002E4BC8 /* Authentication.storyboard */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +221,7 @@
 				9F4802BB1DE1FB5200333307 /* GoogleService-Info.plist in Resources */,
 				9F4802B01DE1522200333307 /* Assets.xcassets in Resources */,
 				9F4802AE1DE1522200333307 /* Main.storyboard in Resources */,
+				9FF16AF41E3ED918002E4BC8 /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,14 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F4802CA1DE9D2B900333307 /* DataPersistencyManager.swift in Sources */,
-				9F4802CC1DE9D5E700333307 /* DataManager.swift in Sources */,
-				9F4802C31DE2934400333307 /* FirebaseManager.swift in Sources */,
-				9F4802AB1DE1522200333307 /* SecondViewController.swift in Sources */,
+				9FF16AF01E3ED689002E4BC8 /* MainAuthenticationViewController.swift in Sources */,
+				9F648E9A1E481C28009384C2 /* FirebaseEndpoints.swift in Sources */,
 				9F4802C81DE29C9F00333307 /* User.swift in Sources */,
-				9F4802C61DE29A8F00333307 /* Record.swift in Sources */,
+				9F4802C61DE29A8F00333307 /* Matchup.swift in Sources */,
 				9F4802A71DE1522200333307 /* AppDelegate.swift in Sources */,
-				9F4802A91DE1522200333307 /* FirstViewController.swift in Sources */,
+				9F648E9C1E4837BF009384C2 /* FirebaseAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
