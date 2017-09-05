@@ -13,7 +13,6 @@ class AuthenticationMain extends Component {
   render() {
       return (
         <Image source={require('../../ui/images/authentication_bg.jpg')} style={styles.backgroundImageContainer}>
-        <View>
           <View style={styles.viewContainer}>
 
             <View style={styles.logoImageContainer}>
@@ -38,7 +37,6 @@ class AuthenticationMain extends Component {
             </View>
 
           </View>
-          </View>
         </Image>
       );
     }
@@ -48,9 +46,6 @@ export default AuthenticationMain;
 
 const screenHeight = Dimensions.get("window").height; 
 const styles = {
-  opacityOverlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.2)'
-  },
   backgroundImageContainer: {
     flex: 1,
     width: undefined,
