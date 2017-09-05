@@ -9,10 +9,11 @@ class AuthenticationMain extends Component {
   onSignUpButtonPress() {
     // TODO: Navigate to sign up page
   }
-
+  
   render() {
       return (
         <Image source={require('../../ui/images/authentication_bg.jpg')} style={styles.backgroundImageContainer}>
+        <View>
           <View style={styles.viewContainer}>
 
             <View style={styles.logoImageContainer}>
@@ -37,6 +38,7 @@ class AuthenticationMain extends Component {
             </View>
 
           </View>
+          </View>
         </Image>
       );
     }
@@ -46,13 +48,15 @@ export default AuthenticationMain;
 
 const screenHeight = Dimensions.get("window").height; 
 const styles = {
+  opacityOverlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.2)'
+  },
   backgroundImageContainer: {
     flex: 1,
     width: undefined,
     height: undefined,
     alignItems: 'center',
     opacity: .9,
-    backgroundColor: '#000'
   },
   viewContainer: {
     flex: 1,
@@ -64,7 +68,7 @@ const styles = {
     flex: 1,
     alignItems: 'center',
     marginTop: em(5),
-    //marginBottom: em(2)
+    marginBottom: em(12)
   },
   logoImage: {
     resizeMode: 'contain',
@@ -75,7 +79,7 @@ const styles = {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    marginBottom: em(4),
+    marginBottom: em(11),
   },
   titleLabel: {
     fontSize: 40,
@@ -86,13 +90,12 @@ const styles = {
   buttonContainer: {
     flex: 1,
     width: null,
-    marginBottom: em(4),
   },
   signInTextContainer: {
-    //flex: 1,
+    flex: 1,
     flexDirection: 'row',
     backgroundColor: 'rgba(0,0,0,0)',
-    //margin: Style.marginTop,
+    marginTop: em(4),
   },
   signInPrimaryText: {
     color: '#454651'
