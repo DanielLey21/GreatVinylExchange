@@ -4,13 +4,11 @@ import { connect } from 'react-redux';
 
 import { BackButtonHeader, InputField, LinkButton } from '../../components/common';
 import { Style, em } from '../../styles/styles';
-import { setEmail } from '../../actions';
+import { setUsername } from '../../actions';
 
-class AuthenticationSignUpEmail extends Component {
+class AuthenticationSignUpUsername extends Component {
     state = {
-      email: '', 
-      emailError: false, 
-      emailErrorMessage: 'Please enter a valid email address'
+      userName: '', 
     }; 
     
     constructor(props) {
@@ -22,19 +20,9 @@ class AuthenticationSignUpEmail extends Component {
     }
 
     onNextButtonPress() {
-      this.setState({ emailError: false })
-      if (this.isEmailValid()) {
-        Keyboard.dismiss()
-        this.props.setEmail(this.state.email);
-        this.props.navigation.navigate('AuthenticationSignUpUsername');
-      } else {
-        this.setState({ emailError: true })
-      }
-    }
-
-    isEmailValid() {
-      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(this.state.email);
+      Keyboard.dismiss()
+      this.props.setUsername(this.state.userName);
+      this.props.navigation.navigate('AuthenticationMain');
     }
 
     render() {
@@ -45,12 +33,12 @@ class AuthenticationSignUpEmail extends Component {
               
               <View style={styles.inputContainer}>
                 <InputField 
-                  onChangeText={email => this.setState({ email })}
+                  onChangeText={userName => this.setState({ userName })}
                   onSubmitEditing={this.onNextButtonPress.bind(this)}
-                  placeholder="Enter you email address"
-                  value={this.state.email}
-                  label={!this.state.emailError ? "We won't share it with anyone" : this.state.emailErrorMessage}
-                  showError={this.state.emailError}
+                  placeholder="Enter your display name"
+                  value={this.state.userName}
+                  label={"This is what your exchange group sees"}
+                  showError={false}
                 />
               </View>
 
@@ -84,4 +72,12 @@ const styles = {
   }
 }
 
-export default connect(null, { setEmail })(AuthenticationSignUpEmail);
+const mapStateToProps = ({ authentication }) => {
+    // state.authentication.email 
+    const { email } = authentication;
+    return {
+        email: email,
+    }
+};
+
+export default connect(mapStateToProps, { setUsername })(AuthenticationSignUpUsername);

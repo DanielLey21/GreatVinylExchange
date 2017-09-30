@@ -10,7 +10,7 @@ const InputField = ({ label, placeholder, secureTextEntry = false, value, onChan
         <View style={containerStyle}>
             <TextInput
                 secureTextEntry={secureTextEntry}
-                placeholder="Enter you email address"
+                placeholder={placeholder}
                 placeholderTextColor='#fff'
                 autoCorrect={false}
                 style={value.length == 0 ? [inputStyle, inputStyle] : inputStyle}

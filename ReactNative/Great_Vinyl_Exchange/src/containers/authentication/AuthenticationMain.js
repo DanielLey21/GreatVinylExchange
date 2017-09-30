@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, ImageBackground, Image } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -16,7 +16,7 @@ class AuthenticationMain extends Component {
   
   render() {
       return (
-        <Image source={require('../../ui/images/authentication_bg.jpg')} style={styles.backgroundImageContainer}>
+        <ImageBackground source={require('../../ui/images/authentication_bg.jpg')} style={styles.backgroundImageContainer}>
           <View style={styles.viewContainer}>
 
             <View style={styles.logoImageContainer}>
@@ -41,7 +41,7 @@ class AuthenticationMain extends Component {
             </View>
 
           </View>
-        </Image>
+        </ImageBackground>
       );
     }
 }
