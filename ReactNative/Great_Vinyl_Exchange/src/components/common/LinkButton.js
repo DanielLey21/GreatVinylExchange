@@ -17,7 +17,6 @@ const styles = {
         justifyContent: 'center',
         color: '#ffffff',
         fontSize: 17,
-        //fontWeight: '600',
         paddingTop: 15,
     },
     buttonStyle: {
