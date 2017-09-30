@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, Image } from 'react-native';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import { Button } from '../../components/common';
+import { OrangeButton } from '../../components/common';
 import { Style, em } from '../../styles/styles';
+import { signUpBegin } from '../../actions';
+
 
 class AuthenticationMain extends Component {
 
   onSignUpButtonPress() {
-    // TODO: Navigate to sign up page
+    this.props.navigation.navigate('AuthenticationSignUpEmail');
   }
   
   render() {
@@ -25,11 +29,11 @@ class AuthenticationMain extends Component {
               <Text style={styles.titleLabel}>EXCHANGE</Text>
             </View>
 
-            <Button
+            <OrangeButton
                 style={styles.buttonContainer} 
                 onPress={this.onSignUpButtonPress.bind(this)}>
                     SignUp  
-            </Button>
+            </OrangeButton>
 
             <View style={styles.signInTextContainer}>
               <Text style={styles.signInPrimaryText}>Already have an account? </Text>
@@ -42,9 +46,6 @@ class AuthenticationMain extends Component {
     }
 }
 
-export default AuthenticationMain;
-
-const screenHeight = Dimensions.get("window").height; 
 const styles = {
   backgroundImageContainer: {
     flex: 1,
@@ -99,4 +100,13 @@ const styles = {
     color: '#ffffff'
   }
 };
+
+const mapStateToProps = ({ authentication }) => { 
+    const { currentScene } = authentication;
+    return {
+        navigation: currentScene,
+    }
+};
+
+export default connect(null, { signUpBegin })(AuthenticationMain);;
 
