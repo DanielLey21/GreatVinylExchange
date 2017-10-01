@@ -26,7 +26,7 @@ class AuthenticationSignUpPassword extends Component {
       if (this.isPasswordValid()) {
         Keyboard.dismiss()
         this.props.setPassword(this.state.password);
-        this.props.navigation.navigate('AuthenticationMain');
+        this.props.navigation.navigate('AuthenticationSignUpConfirmPassword');
       } else {
         this.setState({ passwordError: true })
       }
