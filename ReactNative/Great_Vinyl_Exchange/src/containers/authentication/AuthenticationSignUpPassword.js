@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 
 import { BackButtonHeader, InputField, LinkButton } from '../../components/common';
 import { Style, em } from '../../styles/styles';
-import { setUsername } from '../../actions';
+import { setPassword } from '../../actions';
 
-class AuthenticationSignUpUsername extends Component {
+class AuthenticationSignUpPassword extends Component {
     state = {
-      userName: '', 
+      password: '', 
+      passwordError: false, 
+      passwordErrorMessage: 'Your password must be a least 8 characters long'
     }; 
     
     constructor(props) {
@@ -20,9 +22,18 @@ class AuthenticationSignUpUsername extends Component {
     }
 
     onNextButtonPress() {
-      Keyboard.dismiss()
-      this.props.setUsername(this.state.userName);
-      this.props.navigation.navigate('AuthenticationSignUpPassword');
+      this.setState({ passwordError: false })
+      if (this.isPasswordValid()) {
+        Keyboard.dismiss()
+        this.props.setPassword(this.state.password);
+        this.props.navigation.navigate('AuthenticationMain');
+      } else {
+        this.setState({ passwordError: true })
+      }
+    }
+
+    isPasswordValid() {
+        return this.state.password.length >= 8;
     }
 
     render() {
@@ -33,12 +44,13 @@ class AuthenticationSignUpUsername extends Component {
               
               <View style={styles.inputContainer}>
                 <InputField 
-                  onChangeText={userName => this.setState({ userName })}
+                  onChangeText={password => this.setState({ password })}
                   onSubmitEditing={this.onNextButtonPress.bind(this)}
-                  placeholder="Enter your display name"
-                  value={this.state.userName}
-                  label={"This is what your exchange group sees"}
-                  showError={false}
+                  placeholder="Enter your password"
+                  value={this.state.password}
+                  label={!this.state.passwordError ? "Make it a good one" : this.state.passwordErrorMessage}
+                  showError={this.state.passwordError}
+                  secureTextEntry={true}
                 />
               </View>
 
@@ -72,12 +84,4 @@ const styles = {
   }
 }
 
-const mapStateToProps = ({ authentication }) => {
-    // state.authentication.email 
-    const { email } = authentication;
-    return {
-        email: email,
-    }
-};
-
-export default connect(mapStateToProps, { setUsername })(AuthenticationSignUpUsername);
+export default connect(null, { setPassword })(AuthenticationSignUpPassword);
