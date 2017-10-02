@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 
 import { BackButtonHeader, InputField, LinkButton } from '../../components/common';
 import { Style, em } from '../../styles/styles';
-import { setUsername } from '../../actions';
+import { setAddress } from '../../actions';
 
-class AuthenticationSignUpUsername extends Component {
+class AuthenticationSignUpAddress extends Component {
     state = {
-      userName: '', 
+      address: '', 
     }; 
     
     constructor(props) {
@@ -21,8 +21,8 @@ class AuthenticationSignUpUsername extends Component {
 
     onNextButtonPress() {
       Keyboard.dismiss()
-      this.props.setUsername(this.state.userName);
-      this.props.navigation.navigate('AuthenticationSignUpAddress');
+      this.props.setAddress(this.state.address);
+      this.props.navigation.navigate('AuthenticationSignUpPassword');
     }
 
     render() {
@@ -33,12 +33,13 @@ class AuthenticationSignUpUsername extends Component {
               
               <View style={styles.inputContainer}>
                 <InputField 
-                  onChangeText={userName => this.setState({ userName })}
+                  onChangeText={address => this.setState({ address })}
                   onSubmitEditing={this.onNextButtonPress.bind(this)}
-                  placeholder="Enter your display name"
-                  value={this.state.userName}
-                  label={"This is what your exchange group sees"}
+                  placeholder="Enter the address you would like your records sent to"
+                  value={this.state.address}
+                  label={"Street Address, City, State Zipcode"}
                   showError={false}
+                  multiline={true}
                 />
               </View>
 
@@ -80,4 +81,4 @@ const mapStateToProps = ({ authentication }) => {
     }
 };
 
-export default connect(mapStateToProps, { setUsername })(AuthenticationSignUpUsername);
+export default connect(mapStateToProps, { setAddress })(AuthenticationSignUpAddress);

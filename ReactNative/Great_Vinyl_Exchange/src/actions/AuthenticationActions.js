@@ -1,4 +1,4 @@
-import { SET_EMAIL, SET_USERNAME, SET_PASSWORD } from './types';
+import { SET_EMAIL, SET_USERNAME, SET_PASSWORD, SET_ADDRESS } from './types';
 
 export const setEmail = (email) => {
     return {
@@ -18,5 +18,12 @@ export const setPassword = (password) => {
     return {
         type: SET_PASSWORD,
         payload: password
+    };
+};
+
+export const setAddress = (address) => {
+    return {
+        type: SET_PASSWORD,
+        payload: address
     };
 };
