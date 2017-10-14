@@ -35,9 +35,9 @@ class AuthenticationSignUpAddress extends Component {
                 <InputField 
                   onChangeText={address => this.setState({ address })}
                   onSubmitEditing={this.onNextButtonPress.bind(this)}
-                  placeholder="Enter the address you would like your records sent to"
+                  placeholder="Enter your preferred address"
                   value={this.state.address}
-                  label={"Street Address, City, State Zipcode"}
+                  label={"Where do you want your records sent to?\nStreet Address, City, State Zipcode"}
                   showError={false}
                   multiline={true}
                 />
