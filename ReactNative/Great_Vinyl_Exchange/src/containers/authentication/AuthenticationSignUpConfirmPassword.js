@@ -1,20 +1,38 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, Image, Keyboard  } from 'react-native';
+import { 
+  View, 
+  Text, 
+  ImageBackground, 
+  Image, 
+  Keyboard, 
+  Alert
+} from 'react-native';
 import { connect } from 'react-redux';
 
-import { BackButtonHeader, InputField, OrangeButton } from '../../components/common';
+import { BackButtonHeader, InputField, OrangeButton, Spinner } from '../../components/common';
 import { Style, em } from '../../styles/styles';
-import { setPassword } from '../../actions';
+import { setPassword, registerUser } from '../../actions';
+import User from '../../models/User';
 
 class AuthenticationSignUpConfirmPassword extends Component {
+    
     state = {
       confirmPassword: '', 
       confirmPasswordError: false, 
       confirmPasswordErrorMessage: "Your paswords don't match",
+      firebaseError: this.props.firebaseError,
     }; 
-    
+
     constructor(props) {
       super(props);
+    }
+
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.firebaseError !== null) {
+        this.setState({
+          firebaseError: nextProps.firebaseError,
+        });
+      }
     }
 
     onBackButtonPress() {
@@ -23,39 +41,75 @@ class AuthenticationSignUpConfirmPassword extends Component {
 
     onJoinButtonPress() {
       this.setState({ confirmPasswordError: false })
-      console.log("In Next Button Function");
-      if (this.isConfirmPasswordValid()) {
+      if (this._isConfirmPasswordValid()) {
+        const { email, address, username } = this.props;
         Keyboard.dismiss()
-        console.log("valid password");
-        //this.props.setPassword(this.state.password);
-        // TODO: Submit to Realm for authentication sign up
-        this.props.navigation.navigate('AuthenticationMain');
+        this.props.setPassword(this.state.confirmPassword);
+        const user = { 
+          email,
+          username,
+          address,
+        }; 
+        this.props.registerUser(new User(email, username, address), this.state.confirmPassword);
       } else {
-        console.log("invalid password");
         this.setState({ confirmPasswordError: true })
       }
     }
 
-    isConfirmPasswordValid() {
+    _isConfirmPasswordValid() {
         return this.state.confirmPassword == this.props.password;
     }
 
+    _displaySubtitleLabel() {
+      if (this.state.confirmPasswordError) {
+        return this.state.confirmPasswordErrorMessage;
+      } else if (this.state.firebaseError) {
+        return 'Please fix the errors';
+      }
+
+      return "To help you remember";
+    }
+
+    _renderAuthenticationAlertMessage() {
+      const { firebaseError } = this.props;
+      return Alert.alert(firebaseError.message);
+    }
+
+    _renderSpinner() {
+      return (<Spinner size="large" />);
+    }
+
     render() {
-      const { backgroundImageContainer, inputContainer, buttonContainer } = styles
-      return (
+        const { backgroundImageContainer, inputContainer, buttonContainer } = styles
+
+        if (this.props.isLoading) {
+          return (
+            <ImageBackground source={require('../../ui/images/authentication_bg.jpg')} style={styles.backgroundImageContainer}>
+              <View>
+                {this.props.isLoading && this._renderSpinner()}
+              </View>
+            </ImageBackground>
+          );
+        }
+
+        return (
           <ImageBackground source={require('../../ui/images/authentication_bg.jpg')} style={styles.backgroundImageContainer}>
               <BackButtonHeader onPress={this.onBackButtonPress.bind(this)} />
               
               <View style={styles.inputContainer}>
                 <InputField 
                   onChangeText={confirmPassword => this.setState({ confirmPassword })}
-                  onSubmitEditing={this.onNextButtonPress.bind(this)}
+                  onSubmitEditing={this.onJoinButtonPress.bind(this)}
                   placeholder="Re-enter your password"
                   value={this.state.confirmPassword}
-                  label={!this.state.confirmPasswordError ? "To help you remember" : this.state.confirmPasswordErrorMessage}
-                  showError={this.state.confirmPasswordError}
+                  label={this._displaySubtitleLabel()}
+                  showError={!!this.state.confirmPasswordError || !!this.state.firebaseError}
                   secureTextEntry={true}
                 />
+              </View>
+
+              <View>
+                {this.props.isLoading && this._renderSpinner()}
               </View>
 
               <View style={styles.buttonContainer}>
@@ -65,8 +119,13 @@ class AuthenticationSignUpConfirmPassword extends Component {
                       Join the Great Vinyl Exchange
                 </OrangeButton>
               </View>  
+
+              <View>
+                {this.state.firebaseError && this._renderAuthenticationAlertMessage()}
+              </View>
           </ImageBackground>
-    )};
+      );
+    }
 }
 
 const styles = {
@@ -89,11 +148,23 @@ const styles = {
 }
 
 const mapStateToProps = ({ authentication }) => {
-    // state.authentication.email 
-    const { password } = authentication;
+    const { email,
+            password,
+            username,
+            address,
+            firebaseError, 
+            isLoading,
+            isResponseSuccessful,
+     } = authentication;
     return {
-        password: password,
-    }
+        email,
+        password,
+        username,
+        address,
+        firebaseError,
+        isLoading,
+        isResponseSuccessful,
+    };
 };
 
-export default connect(mapStateToProps, { setPassword })(AuthenticationSignUpConfirmPassword);
+export default connect(mapStateToProps, { setPassword, registerUser })(AuthenticationSignUpConfirmPassword);
