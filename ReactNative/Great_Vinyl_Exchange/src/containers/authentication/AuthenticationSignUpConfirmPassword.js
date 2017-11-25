@@ -50,7 +50,7 @@ class AuthenticationSignUpConfirmPassword extends Component {
           username,
           address,
         }; 
-        this.props.registerUser(user, this.state.confirmPassword);
+        this.props.registerUser(new User(email, username, address), this.state.confirmPassword);
       } else {
         this.setState({ confirmPasswordError: true })
       }
@@ -63,7 +63,7 @@ class AuthenticationSignUpConfirmPassword extends Component {
     _displaySubtitleLabel() {
       if (this.state.confirmPasswordError) {
         return this.state.confirmPasswordErrorMessage;
-      } else if (this.props.firebaseError) {
+      } else if (this.state.firebaseError) {
         return 'Please fix the errors';
       }
 
@@ -103,7 +103,7 @@ class AuthenticationSignUpConfirmPassword extends Component {
                   placeholder="Re-enter your password"
                   value={this.state.confirmPassword}
                   label={this._displaySubtitleLabel()}
-                  showError={!!this.state.confirmPasswordError || !!this.props.firebaseError}
+                  showError={!!this.state.confirmPasswordError || !!this.state.firebaseError}
                   secureTextEntry={true}
                 />
               </View>
@@ -121,7 +121,7 @@ class AuthenticationSignUpConfirmPassword extends Component {
               </View>  
 
               <View>
-                {this.props.firebaseError && this._renderAuthenticationAlertMessage()}
+                {this.state.firebaseError && this._renderAuthenticationAlertMessage()}
               </View>
           </ImageBackground>
       );
