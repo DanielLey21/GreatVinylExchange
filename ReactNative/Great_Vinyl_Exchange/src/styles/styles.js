@@ -1,4 +1,4 @@
-import React from "react-native";
+import React from 'react-native';
 import Dimensions from 'Dimensions';
 
 // Precalculate Device Dimensions for better performance

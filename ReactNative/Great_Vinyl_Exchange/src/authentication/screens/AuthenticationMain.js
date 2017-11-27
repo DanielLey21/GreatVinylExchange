@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground, Image } from 'react-native';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
-import { OrangeButton } from '../../components/common';
+import { OrangeButton } from '../../common-components';
 import { Style, em } from '../../styles/styles';
-import { signUpBegin } from '../../actions';
 
 
 class AuthenticationMain extends Component {
@@ -16,11 +14,11 @@ class AuthenticationMain extends Component {
   
   render() {
       return (
-        <ImageBackground source={require('../../ui/images/authentication_bg.jpg')} style={styles.backgroundImageContainer}>
+        <ImageBackground source={require('../../resources/images/authentication_bg.jpg')} style={styles.backgroundImageContainer}>
           <View style={styles.viewContainer}>
 
             <View style={styles.logoImageContainer}>
-              <Image source={require('../../ui/images/gve_logo.png')} style={styles.logoImage} />
+              <Image source={require('../../resources/images/gve_logo.png')} style={styles.logoImage} />
             </View>
 
             <View style={styles.titleLabelContainer}>
@@ -101,12 +99,5 @@ const styles = {
   }
 };
 
-const mapStateToProps = ({ authentication }) => { 
-    const { currentScene } = authentication;
-    return {
-        navigation: currentScene,
-    }
-};
-
-export default connect(null, { signUpBegin })(AuthenticationMain);;
+export default connect(null)(AuthenticationMain);
 

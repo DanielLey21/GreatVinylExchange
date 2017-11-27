@@ -9,7 +9,7 @@ const BackButtonHeader = ({ onPress }) => {
     return (
         <View style={viewStyle}>
             <TouchableOpacity onPress={onPress}>
-                <Image source={require('../../ui/images/back-arrow.png')} style={backButtonStyle}/>
+                <Image source={require('../resources/images/back-arrow.png')} style={backButtonStyle}/>
             </TouchableOpacity>
         </View>
     );

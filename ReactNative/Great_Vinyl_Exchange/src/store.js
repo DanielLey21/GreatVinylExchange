@@ -1,12 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 
 import thunk from 'redux-thunk';
-import reducers from '../reducers';
+import reducers from './ReducerIndex';
 
 const initialState = {
     nav: null,
-    contacts: [],
-    contactDetails: null,
     error: null,
 };
 

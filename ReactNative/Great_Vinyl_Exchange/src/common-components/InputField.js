@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 
-import { Style, em } from '../../styles/styles';
+import { Style, em } from '../styles/styles';
 
 const InputField = ({ label, placeholder, secureTextEntry = false, value, onChangeText, onSubmitEditing, showError, multiline = false }) => {
     const { inputStyle, labelStyle, errorLabelStyle, containerStyle } = styles;
